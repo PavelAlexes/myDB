@@ -199,25 +199,6 @@ public class Main {
         }
     }
 
-//    private static void getPlayerNamed(Connection connection, String first_name) throws SQLException {
-//        if (first_name == null || first_name.isBlank()) return;
-//        first_name = '%' + first_name + '%';                    // переданное значение может быть дополнено сначала и в конце (часть слова)
-//
-//        PreparedStatement statement = connection.prepareStatement(
-//                "SELECT * " +
-//                        "FROM player;");                        // создаем оператор шаблонного-запроса с "включаемыми" параметрами - ?
-//        statement.setString(1, first_name);        // "безопасное" добавление параметров в запрос; с учетом их типа и порядка (индексация с 1)
-//        ResultSet rs = statement.executeQuery();                // выполняем запроса на поиск и получаем список ответов
-//
-//        while (rs.next()) {                                     // пока есть данные перебираем их и выводим
-//            System.out.println(rs.getString(1) + " | " + rs.getString(2) + " | " + rs.getString(3) +
-//                    " | " + rs.getString(4) + " | " + rs.getInt(5) + " | " + rs.getInt(6));
-//        }
-//
-//    }
-
-
-
     private static void addPlayer (Connection connection, String first_name, String last_name, String role,
                                    String team, int number_of_points, int game_number)  throws SQLException {
         if (first_name == null || first_name.isBlank() || last_name == null || last_name.isBlank() ||
