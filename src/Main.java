@@ -30,10 +30,9 @@ public class Main {
 //                getPlayerByNamed(connection, "pasha", false); System.out.println();// возьмем всех и найдем перебором
 //                getCoachPlayer(connection, "loko"); System.out.println();
 
+// hi man
 
 
-
-//      паша пидр
 
 
                 getPlayerByNamed(connection, "pasha", true); System.out.println(); // тоже самое сделает БД   ???????????????????????
