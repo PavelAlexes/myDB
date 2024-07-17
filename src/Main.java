@@ -137,7 +137,7 @@ public class Main {
         while (rs.next()) {                                    // пока есть данные, продвигаться по ним
             param2 = rs.getString(columnName2);                // значение ячейки, можно получить по имени; по умолчанию возвращается строка
             param1 = rs.getString(columnName1);
-            param0 = rs.getInt(columnName0);                   // если точно уверены в типе данных ячейки, можно его сразу преобразовать
+            param0 = rs.getInt(columnName0);                   // если точно уверен в типе данных ячейки, можно его сразу преобразовать
             System.out.println(param0 + " | " + param1 + " | " + param2);
         }
     }
@@ -150,8 +150,8 @@ public class Main {
         Statement statement = connection.createStatement(); // создаем оператор для простого запроса (без параметров)
         ResultSet rs = statement.executeQuery("SELECT * FROM player;");  // выполняем запроса на поиск и получаем список ответов
 
-        while (rs.next()) {                                 // пока есть данные
-            param0 = rs.getInt(1);               // значение ячейки, можно также получить по порядковому номеру (начиная с 1)
+        while (rs.next()) {
+            param0 = rs.getInt(1);
             param1 = rs.getString(2);
             param2 = rs.getString(3);
             param3 = rs.getString(4);
