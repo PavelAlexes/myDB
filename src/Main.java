@@ -24,11 +24,14 @@ public class Main {
 
             try (Connection connection = DriverManager.getConnection(DATABASE_URL, USER_NAME, DATABASE_PASS)) {
 
-                getAllTeams(connection); System.out.println();
 
-                getCoachWins(connection, "lokom"); System.out.println();
+                getCoachWins(connection, "loko"); System.out.println();
 
                 getAllPlayers(connection); System.out.println();
+
+                getCoachPlayer(connection, "loko"); System.out.println();
+
+                getAllTeams(connection); System.out.println();
 
                 addPlayer(connection, "pasha", "polyakov", "нападающий", "loko",0,88); System.out.println();
 
@@ -37,8 +40,6 @@ public class Main {
                 correctNumberOfPoints(connection, "pasha", "polyakov", "нападающий", "loko",10,88); System.out.println();
 
                 getPlayerByNamed(connection, "pasha"); System.out.println();
-
-                getCoachPlayer(connection, "loko"); System.out.println();
 
                 getPlayersFromTheTeam(connection, "loko"); System.out.println();
 
@@ -135,7 +136,7 @@ public class Main {
         ResultSet rs = statement.executeQuery("SELECT * FROM team;"); // выполняем запроса на поиск и получаем список ответов
 
         while (rs.next()) {                                    // пока есть данные, продвигаться по ним
-            param2 = rs.getString(columnName2);                // значение ячейки, можно получить по имени; по умолчанию возвращается строка
+            param2 = rs.getString(columnName2);
             param1 = rs.getString(columnName1);
             param0 = rs.getInt(columnName0);                   // если точно уверен в типе данных ячейки, можно его сразу преобразовать
             System.out.println(param0 + " | " + param1 + " | " + param2);
@@ -211,7 +212,7 @@ public class Main {
         statement.setString(3, role);
         statement.setString(4, team);
         statement.setInt(5, number_of_points);
-        statement.setInt(6, game_number);           // "безопасное" добавление количества гла
+        statement.setInt(6, game_number);
 
         int count =
                 statement.executeUpdate();                       // выполняем запрос на коррекцию и возвращаем количество измененных строк
